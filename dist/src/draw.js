@@ -315,6 +315,10 @@ exports.GanttChart = function (pDiv, pFormat) {
         vTmpDate.setSeconds(0);
         vTmpDate.setMilliseconds(0);
         var vColSpan = 1;
+        // Adjust the start date to the previous Saturday if it's not already Saturday
+        if (vTmpDate.getDay() != 6) {
+        vTmpDate.setDate(vTmpDate.getDate() - (vTmpDate.getDay() + 1));
+        }
         // Major Date Header
         while (vTmpDate.getTime() <= vMaxDate.getTime()) {
             var vHeaderCellClass = "gmajorheading";
@@ -711,6 +715,9 @@ exports.GanttChart = function (pDiv, pFormat) {
             vColWidth = this.vHourColWidth;
         // DRAW the Left-side of the chart (names, resources, comp%)
         var vLeftHeader = document.createDocumentFragment();
+        var newId = '#' + this.vDivId + 'gchartbody';
+        CUR_SCROLL_TOP = $(newId).scrollTop();
+        CUR_SCROLL_LEFT = $(newId).scrollLeft();
         /**
          * LIST HEAD
          */
