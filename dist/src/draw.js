@@ -864,7 +864,7 @@ exports.GanttChart = function (pDiv, pFormat) {
           window.scrollTo(0, window.scrollY + (startY - e.pageY));
         });
       }
-    };
+    
         if (this.vDebug) {
             var ad = new Date();
             console.info("after draw", ad, ad.getTime() - bd.getTime());
