@@ -316,9 +316,9 @@ exports.GanttChart = function (pDiv, pFormat) {
         vTmpDate.setMilliseconds(0);
         var vColSpan = 1;
         // Adjust the start date to the previous Saturday if it's not already Saturday
-        if (vTmpDate.getDay() != 6) {
-        vTmpDate.setDate(vTmpDate.getDate() - (vTmpDate.getDay() + 1));
-        }
+       //  if (vTmpDate.getDay() != 6) {
+       //  vTmpDate.setDate(vTmpDate.getDate() - (vTmpDate.getDay() + 1));
+       //  }
         // Major Date Header
         while (vTmpDate.getTime() <= vMaxDate.getTime()) {
             var vHeaderCellClass = "gmajorheading";
@@ -834,6 +834,37 @@ exports.GanttChart = function (pDiv, pFormat) {
      * Actions after all the render process
      */
     this.drawComplete = function (vMinDate, vColWidth, bd) {
+                 var slider = this.getChartBody();
+      var isDown = false;
+      var startX;
+      var startY;
+      var scrollLeft;
+      if (slider) {
+        slider.addEventListener('mousedown', (e) => {
+          console.info("mouse down", ad, ad.getTime() - bdd.getTime());
+
+          isDown = true;
+          e.preventDefault();
+          startX = e.pageX - slider.offsetLeft;
+          startY = e.pageY;
+          scrollLeft = slider.scrollLeft;
+        });
+        slider.addEventListener('mouseleave', () => {
+          isDown = false;
+        });
+        slider.addEventListener('mouseup', () => {
+          isDown = false;
+        });
+        slider.addEventListener('mousemove', (e) => {
+          if (!isDown) return;
+          e.preventDefault();
+          const x = e.pageX - slider.offsetLeft;
+          const walkX = (x - startX) * 1; //change scroll-speed here
+          slider.scrollLeft = scrollLeft - walkX;
+          window.scrollTo(0, window.scrollY + (startY - e.pageY));
+        });
+      }
+    };
         if (this.vDebug) {
             var ad = new Date();
             console.info("after draw", ad, ad.getTime() - bd.getTime());
