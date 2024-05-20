@@ -885,7 +885,7 @@ export const GanttChart = function (pDiv, pFormat) {
     let bdd;
     if (this.vDebug) {
       bdd = new Date();
-      console.info("before DrawDependencieskkkkkkkkk", bdd);
+      console.info("before DrawDependencies", bdd);
     }
     if (this.vEvents && typeof this.vEvents.beforeLineDraw === "function") {
       this.vEvents.beforeLineDraw();
@@ -903,7 +903,18 @@ export const GanttChart = function (pDiv, pFormat) {
     }
 
     this.drawComplete(vMinDate, vColWidth, bd);
-  };
+     setTimeout(function () {
+      if (CUR_SCROLL_TOP > 0) {
+
+        $(newId).scrollTop(CUR_SCROLL_TOP);
+      }
+      if (CUR_SCROLL_LEFT > 0) {
+
+        $(newId).scrollLeft(CUR_SCROLL_LEFT);
+      }
+    }, 300);
+    
+    };
 
   /**
    * Actions after all the render process
