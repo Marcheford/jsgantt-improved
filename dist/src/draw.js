@@ -684,6 +684,8 @@ exports.GanttChart = function (pDiv, pFormat) {
      *  vTaskRightPx,vTaskWidth,vTaskPlanLeftPx,vTaskPlanRightPx,vID
      */
     this.Draw = function () {
+        var CUR_SCROLL_TOP = 0;
+        var CUR_SCROLL_LEFT = 0;
         var vMaxDate = new Date();
         var vMinDate = new Date();
         var vColWidth = 0;
