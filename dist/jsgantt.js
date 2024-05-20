@@ -1143,7 +1143,7 @@ exports.folder = function (pID, ganttObj) {
     ganttObj.DrawDependencies(this.vDebug);
     if (this.vDebug) {
         var ad = new Date();
-        console.info('after drawDependency', ad, (ad.getTime() - bd.getTime()));
+        console.info('after drawDependencykkk', ad, (ad.getTime() - bd.getTime()));
     }
 };
 exports.hide = function (pID, ganttObj) {
