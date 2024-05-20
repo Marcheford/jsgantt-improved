@@ -885,7 +885,7 @@ export const GanttChart = function (pDiv, pFormat) {
     let bdd;
     if (this.vDebug) {
       bdd = new Date();
-      console.info("before DrawDependencies", bdd);
+      console.info("before DrawDependencieskkkkkkkkk", bdd);
     }
     if (this.vEvents && typeof this.vEvents.beforeLineDraw === "function") {
       this.vEvents.beforeLineDraw();
