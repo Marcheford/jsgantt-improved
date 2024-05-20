@@ -806,7 +806,7 @@ exports.GanttChart = function (pDiv, pFormat) {
         }
         if (this.vDebug) {
             var ad = new Date();
-            console.info("after DrawDependencies", ad, ad.getTime() - bdd.getTime());
+            console.info("after DrawDependencies" +"working", ad, ad.getTime() - bdd.getTime());
         }
         this.drawComplete(vMinDate, vColWidth, bd);
     };
