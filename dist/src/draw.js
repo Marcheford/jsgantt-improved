@@ -834,6 +834,8 @@ exports.GanttChart = function (pDiv, pFormat) {
      * Actions after all the render process
      */
     this.drawComplete = function (vMinDate, vColWidth, bd) {
+                  console.info("ana hna after draw");
+
                  var slider = this.getChartBody();
       var isDown = false;
       var startX;
@@ -841,7 +843,7 @@ exports.GanttChart = function (pDiv, pFormat) {
       var scrollLeft;
       if (slider) {
         slider.addEventListener('mousedown', (e) => {
-          console.info("mouse down", ad, ad.getTime() - bdd.getTime());
+          console.info("mouse down");
 
           isDown = true;
           e.preventDefault();
