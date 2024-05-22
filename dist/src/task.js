@@ -38,7 +38,6 @@ exports.sortTasks = function (pList, pID, pIdx) {
         if (pList[i].getParent() == pID)
             sortArr.push(pList[i]);
     }
-                console.log('test');
 
     if (sortArr.length > 0) {
        // sortArr.sort(function (a, b) {
