@@ -38,16 +38,19 @@ exports.sortTasks = function (pList, pID, pIdx) {
         if (pList[i].getParent() == pID)
             sortArr.push(pList[i]);
     }
+                console.log('test');
+
     if (sortArr.length > 0) {
-        sortArr.sort(function (a, b) {
-            var i = a.getStart().getTime() - b.getStart().getTime();
-            if (i == 0)
-                i = a.getEnd().getTime() - b.getEnd().getTime();
-            if (i == 0)
-                return a.getID() - b.getID();
-            else
-                return i;
-        });
+       // sortArr.sort(function (a, b) {
+          //  var i = a.getStart().getTime() - b.getStart().getTime();
+          //  if (i == 0)
+            //    i = a.getEnd().getTime() - b.getEnd().getTime();
+          //  if (i == 0)
+           //     return a.getID() - b.getID();
+          //  else
+          //      return i;
+      //  });
+
     }
     for (var j = 0; j < sortArr.length; j++) {
         for (var i = 0; i < pList.length; i++) {
