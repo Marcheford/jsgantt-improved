@@ -683,22 +683,22 @@ div.glistgrid {
   float: left;
 }
 
-div.gchartgrid {
+/*div.gchartgrid {
   *padding-bottom: 20px;
   *overflow-y: hidden;
-}
+}*/
 
 /* variable height design, no need for vertical scroll */
 
-td.gmajorheading div {
+/*td.gmajorheading div {
   *overflow: hidden;
-}
+}*/
 
 /* stops resizing fixed width columns if the text is too wide */
 
-td.gspanning div {
+/*td.gspanning div {
   *overflow: hidden;
-}
+}*/
 
 /* stops resizing fixed width columns if the text is too wide */
 
