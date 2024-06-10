@@ -69,7 +69,7 @@ export const GanttChart = function (pDiv, pFormat) {
     5: true,
     6: true,
   };
-
+ 
   this.vEventClickCollapse = null;
   this.vEventClickRow = null;
   this.vEvents = {
